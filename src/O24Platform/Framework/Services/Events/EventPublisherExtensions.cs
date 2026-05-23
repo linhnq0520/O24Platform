@@ -1,4 +1,3 @@
-using System.Text.Json;
 using O24OpenAPI.Client.Events.EventData;
 using O24OpenAPI.Core.Configuration;
 using O24OpenAPI.Core.Domain.Logging;
@@ -13,37 +12,6 @@ namespace O24OpenAPI.Framework.Services.Events;
 /// </summary>
 public static class EventPublisherExtensions
 {
-    /// <summary>
-    /// Workflows the event update using the specified event publisher
-    /// </summary>
-    /// <param name="eventPublisher">The event publisher</param>
-    /// <param name="evt">The evt</param>
-    public static async Task WorkflowEventUpdate(
-        this IEventPublisher eventPublisher,
-        WorkflowEvent evt
-    )
-    {
-        ILogger logger = EngineContext.Current.Resolve<ILogger>();
-        AppSettings appSettings = EngineContext.Current.Resolve<AppSettings>();
-        if (logger != null && appSettings.Get<O24OpenAPIConfiguration>().LogEventMessage)
-        {
-            await logger.Insert(
-                LogLevel.Information,
-                $"Receive {evt.EventName} from portal - {evt.WorkflowId} - {evt.ExecutionId}",
-                JsonSerializer.Serialize(evt.EventData) ?? ""
-            );
-        }
-        await eventPublisher.Publish(evt);
-    }
-
-    // public static async Task WorkflowFinishEventUpdate(
-    //     this IEventPublisher eventPublisher,
-    //     WorkflowFinishEvent evt
-    // )
-    // {
-    //     await eventPublisher.Publish(evt);
-    // }
-
     /// <summary>
     /// Workflows the service to service event update using the specified event publisher
     /// </summary>

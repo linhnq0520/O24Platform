@@ -1,4 +1,3 @@
-using System.Text.Json;
 using O24OpenAPI.Client.Enums;
 using O24OpenAPI.Client.Log;
 using JsonSerializer = System.Text.Json.JsonSerializer;
@@ -42,7 +41,7 @@ public class WorkflowScheme : IValidScheme
         int num = this.Request.IsValid(out error1) ? 1 : 0;
         string error2 = "";
         bool flag = this.Response.IsValid(out error2);
-        object obj = (object)
+        object obj =
             new
             {
                 Request = new { IsValid = num != 0, Error = error1 },
@@ -136,7 +135,7 @@ public class WorkflowScheme : IValidScheme
             int num = this.RequestHeader.IsValid(out error1) ? 1 : 0;
             string error2 = "";
             bool flag = this.RequestHeader.IsValid(out error2);
-            object obj = (object)
+            object obj =
                 new
                 {
                     RequestHeader = new { IsValid = num != 0, Error = error1 },
@@ -231,7 +230,7 @@ public class WorkflowScheme : IValidScheme
             /// Gets or sets the value of the tx context
             /// </summary>
             public Dictionary<string, object> TxContext { get; set; } =
-                new Dictionary<string, object>();
+                [];
 
             /// <summary>
             /// Gets or sets the value of the processing version
@@ -397,7 +396,7 @@ public class WorkflowScheme : IValidScheme
             /// Gets or sets the value of the tx context
             /// </summary>
             public Dictionary<string, object> tx_context { get; set; } =
-                new Dictionary<string, object>();
+                [];
 
             /// <summary>
             /// Gets or sets the value of the processing version
@@ -498,7 +497,7 @@ public class WorkflowScheme : IValidScheme
             /// <summary>
             /// Gets or sets the value of the data
             /// </summary>
-            public object Data { get; set; }
+            public object Data { get; set; } = new object();
 
             /// <summary>
             /// Ises the valid using the specified error

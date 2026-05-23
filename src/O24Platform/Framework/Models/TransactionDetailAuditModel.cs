@@ -9,12 +9,12 @@ public class TransactionDetailAuditModel : BaseO24OpenAPIModel
     /// <summary>
     /// Gets or sets the value of the ref id
     /// </summary>
-    public string RefId { get; set; }
+    public string RefId { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the value of the entity
     /// </summary>
-    public string Entity { get; set; }
+    public string Entity { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the value of the entity id
@@ -24,30 +24,30 @@ public class TransactionDetailAuditModel : BaseO24OpenAPIModel
     /// <summary>
     /// Gets or sets the value of the field name
     /// </summary>
-    public string FieldName { get; set; }
+    public string FieldName { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the value of the old value
     /// </summary>
-    public string OldValue { get; set; }
+    public string? OldValue { get; set; }
 
     /// <summary>
     /// Gets or sets the value of the new value
     /// </summary>
-    public string NewValue { get; set; }
+    public string? NewValue { get; set; }
 
     /// <summary>
     /// Gets or sets the value of the status
     /// </summary>
-    public string Status { get; set; }
+    public string Status { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the value of the update type
     /// </summary>
-    public string UpdateType { get; set; }
+    public string UpdateType { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the value of the description
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 }
