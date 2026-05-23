@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/docs/" />
   <Folder Name="/src/">
+    <Project Path="src/O24Analyzer.Grpc/O24Analyzer.Grpc.csproj" Id="929f968c-8124-49ff-917c-97f6c88ad3b1" />
     <Project Path="src/O24Analyzer/O24Analyzer.csproj" Id="e9a50ba2-4efa-4039-a4ee-aeaffd872cd9" />
     <Project Path="src/O24Platform/O24Platform.csproj" />
   </Folder>
